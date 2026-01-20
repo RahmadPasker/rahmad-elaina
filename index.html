@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elaina Shop - Premium Bot & Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000;
+            --text: #e0e0ff;
+            --muted: #a0a0c0;
+            --pink: #c71585;
+            --glow: #ff69b4;
+            --blue: #3b82f6;
+            --green: #10b981;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #loader {
+            position: fixed; inset:0; background:var(--bg);
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            z-index:9999; transition:opacity 0.7s;
+        }
+        #loader.hidden { opacity:0; pointer-events:none; }
+        .spinner {
+            width:60px; height:60px; border:5px solid var(--pink);
+            border-top:5px solid transparent; border-radius:50%;
+            animation:spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .loading-text { margin-top:20px; color:var(--glow); font-size:1.1rem; }
+
+        .bg-video {
+            position:fixed; inset:0; object-fit:cover; z-index:-2; opacity:0.12; filter:blur(3px);
+        }
+
+        main {
+            flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+            text-align:center; padding:40px 20px;
+        }
+        .rocket { font-size:7rem; margin-bottom:30px; color:#60a5fa; filter:drop-shadow(0 0 30px #60a5fa90); }
+        h1 {
+            font-size:4rem; font-weight:800; margin-bottom:16px;
+            background:linear-gradient(90deg, #60a5fa, #a78bfa, #ff69b4);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+        }
+        p.subtitle {
+            font-size:1.4rem; color:var(--muted); max-width:720px; margin-bottom:50px;
+        }
+        .buttons {
+            display:flex; flex-direction:column; gap:30px; width:100%; max-width:420px;
+        }
+        .btn {
+            padding:20px 50px; border:none; border-radius:12px; font-size:1.4rem; font-weight:700;
+            color:white; cursor:pointer; transition:all 0.3s; box-shadow:0 8px 24px rgba(0,0,0,0.5);
+        }
+        .btn-panel { background:var(--blue); }
+        .btn-bot { background:var(--green); }
+        .btn:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.6); }
+
+        footer {
+            padding:40px 20px; text-align:center; background:rgba(0,0,0,0.7);
+            border-top:1px solid rgba(59,130,246,0.2);
+        }
+        .contact {
+            display:flex; justify-content:center; gap:50px; margin-top:20px; font-size:1.3rem;
+        }
+        .contact a { color:var(--muted); text-decoration:none; }
+        .contact a:hover { color:var(--glow); }
+
+        @media (max-width:768px) {
+            h1 { font-size:3rem; }
+            .rocket { font-size:5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">Memuat Elaina Shop...</div>
+    </div>
+
+    <video autoplay muted loop class="bg-video">
+        <source src="https://image2url.com/r2/default/videos/1768926334468-fe3bacbe-b5d5-4619-89c0-6f510d6039c2.mp4" type="video/mp4">
+    </video>
+
+    <main>
+        <div class="rocket">🎀</div>
+        <h1>Elaina Shop</h1>
+        <p class="subtitle"Layanan Script Bot WhatsApp dan Panel Pterodactyl yang Cepat, Stabil, dan Aman.</p>
+        <div class="buttons">
+            <a href="panel.html" class="btn btn-panel">List Panel</a>
+            <a href="bot.html" class="btn btn-bot">Script Bot WhatsApp</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Hubungi Melalui</p>
+        <div class="contact">
+            <a href="https://t.me/rahmad_tenpoles">Telegram</a>
+            <a href="https://wa.me/6285764735713">WhatsApp</a>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
